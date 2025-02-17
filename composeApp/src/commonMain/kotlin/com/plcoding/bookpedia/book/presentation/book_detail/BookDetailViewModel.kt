@@ -9,7 +9,6 @@ import com.plcoding.bookpedia.book.domain.BookRepository
 import com.plcoding.bookpedia.core.domain.onSuccess
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.onStart
@@ -19,7 +18,7 @@ import kotlinx.coroutines.launch
 
 class BookDetailViewModel(
     private val bookRepository: BookRepository,
-    private val savedStateHandle: SavedStateHandle
+    savedStateHandle: SavedStateHandle
 ): ViewModel() {
 
     private val bookId = savedStateHandle.toRoute<Route.BookDetail>().id
